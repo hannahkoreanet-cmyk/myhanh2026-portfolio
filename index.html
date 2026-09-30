@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV - Phạm Thị Mỹ Hạnh</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    body {
+      background-color: #f3f4f6;
+      color: #333333;
+      padding: 30px 15px;
+      line-height: 1.5;
+    }
+
+    .cv-container {
+      max-width: 920px;
+      margin: 0 auto;
+      background: #ffffff;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+    }
+
+    .action-bar {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      padding: 12px 25px;
+      background: #fafafa;
+      border-bottom: 1px solid #eaeaea;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 4px;
+      font-size: 13px;
+      text-decoration: none;
+      border: 1px solid #d1d5db;
+      background: #ffffff;
+      color: #374151;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn:hover {
+      background: #f3f4f6;
+      border-color: #9ca3af;
+    }
+
+    /* HEADER */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 40px 50px 25px;
+      background-color: #ffffff;
+    }
+
+    .header-left .job-title {
+      font-size: 19px;
+      color: #555555;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+      margin-bottom: 6px;
+    }
+
+    .header-left .name {
+      font-size: 34px;
+      font-weight: 700;
+      color: #222222;
+      letter-spacing: 0.5px;
+      margin-bottom: 14px;
+    }
+
+    .header-left .contact-line {
+      font-size: 13.5px;
+      color: #555555;
+      margin-bottom: 4px;
+    }
+
+    .header-right img {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    /* CV CONTENT BODY */
+    .cv-body {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      padding: 10px 50px 40px;
+      gap: 40px;
+    }
+
+    /* CỘT TRÁI */
+    .left-col {
+      display: flex;
+      flex-direction: column;
+      gap: 26px;
+    }
+
+    .section-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #333333;
+      letter-spacing: 1px;
+      padding-bottom: 5px;
+      border-bottom: 1px solid #777777;
+      margin-bottom: 14px;
+      text-transform: uppercase;
+    }
+
+    .edu-group {
+      margin-bottom: 14px;
+    }
+
+    .bullet-item {
+      position: relative;
+      padding-left: 14px;
+      font-size: 12.5px;
+      color: #333333;
+      margin-bottom: 2px;
+    }
+
+    .bullet-item::before {
+      content: "●";
+      position: absolute;
+      left: 0;
+      font-size: 7px;
+      top: 3px;
+      color: #555555;
+    }
+
+    .item-subtext {
+      padding-left: 14px;
+      font-size: 11.5px;
+      color: #777777;
+    }
+
+    .award-group {
+      margin-bottom: 12px;
+    }
+
+    .award-desc {
+      padding-left: 14px;
+      font-size: 11.5px;
+      color: #666666;
+      line-height: 1.45;
+      margin-top: 2px;
+    }
+
+    .skill-row {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 10px;
+    }
+
+    .skill-name {
+      font-size: 12.5px;
+      color: #444444;
+      margin-bottom: 2px;
+    }
+
+    .skill-dots {
+      color: #333333;
+      letter-spacing: 2px;
+      font-size: 10px;
+    }
+
+    .license-line {
+      font-size: 12.5px;
+      color: #333333;
+      margin-bottom: 6px;
+    }
+
+    /* CỘT PHẢI */
+    .right-col {
+      display: flex;
+      flex-direction: column;
+      gap: 26px;
+    }
+
+    .experience-item {
+      margin-bottom: 20px;
+    }
+
+    .job-title-row {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: #222222;
+      margin-bottom: 6px;
+      position: relative;
+      padding-left: 14px;
+    }
+
+    .job-title-row::before {
+      content: "●";
+      position: absolute;
+      left: 0;
+      font-size: 7px;
+      top: 4px;
+      color: #222222;
+    }
+
+    .job-bullets {
+      list-style-type: none;
+      padding-left: 14px;
+    }
+
+    .job-bullets li {
+      position: relative;
+      padding-left: 12px;
+      font-size: 12px;
+      color: #444444;
+      line-height: 1.55;
+      margin-bottom: 4px;
+    }
+
+    .job-bullets li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #555555;
+      font-size: 11px;
+    }
+
+    @media print {
+      body {
+        padding: 0;
+        background: #ffffff;
+      }
+      .cv-container {
+        box-shadow: none;
+        max-width: 100%;
+      }
+      .action-bar {
+        display: none !important;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .header {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 30px 20px;
+        gap: 20px;
+      }
+      .cv-body {
+        grid-template-columns: 1fr;
+        padding: 10px 20px 30px;
+        gap: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cv-container">
+    <div class="action-bar">
+      <a href="https://www.tiktok.com/@Hanainkorea102" target="_blank" class="btn">
+        <i class="fa-brands fa-tiktok"></i> Tiktok : Hanainkorea102
+      </a>
+      <button onclick="window.print()" class="btn">
+        <i class="fa-solid fa-print"></i> Tải PDF / In CV
+      </button>
+    </div>
+
+    <!-- HEADER PROFILE -->
+    <header class="header">
+      <div class="header-left">
+        <div class="job-title">Phát triển Kinh doanh</div>
+        <div class="name">Phạm Thị Mỹ Hạnh (Park Hana / 박하나)</div>
+        <div class="contact-line">010.3383.3638 | hannahkoreanet@gmail.com</div>
+        <div class="contact-line">Visa F2 | 1992.07.23 | Tiktok : Hanainkorea102</div>
+      </div>
+      <div class="header-right">
+        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=300" alt="Phạm Thị Mỹ Hạnh">
+      </div>
+    </header>
+
+    <!-- MAIN BODY -->
+    <div class="cv-body">
+      
+      <!-- CỘT TRÁI -->
+      <aside class="left-col">
+        <!-- EDUCATION -->
+        <section>
+          <div class="section-title">HỌC VẤN (EDUCATION)</div>
+          <div class="edu-group">
+            <div class="bullet-item">Đại học Soongsil - Cao học Quản trị Kinh doanh Chuyên ngành</div>
+            <div class="item-subtext">2020 – 2022</div>
+          </div>
+          <div class="edu-group">
+            <div class="bullet-item">Đại học Kinh tế TP. Hồ Chí Minh - Khoa Kế toán</div>
+            <div class="item-subtext">2011 – 2018</div>
+          </div>
+          <div class="edu-group">
+            <div class="bullet-item">Trường DROOM về Truyền thông Kỹ thuật số</div>
+            <div class="item-subtext">2014</div>
+          </div>
+        </section>
+
+        <!-- AWARD -->
+        <section>
+          <div class="section-title">GIẢI THƯỞNG & HOẠT ĐỘNG (AWARD)</div>
+          <div class="award-group">
+            <div class="bullet-item">🏆 Asia's Best Seller</div>
+            <div class="award-desc">Global Influencer Expo 2024 🇻🇳🇰🇷🇯🇵🇸🇬</div>
+          </div>
+          <div class="award-group">
+            <div class="bullet-item">05.2019 | Sự kiện mời Phóng viên danh dự Korea.net tại Nhà Xanh, chụp ảnh lưu niệm cùng nguyên Đệ nhất Phu nhân Kim Jung-sook</div>
+          </div>
+          <div class="award-group">
+            <div class="bullet-item">11.2020 | Asean Korea Train / Đại diện Việt Nam</div>
+            <div class="award-desc">Các đại diện ASEAN tham gia nhiều hoạt động giao lưu tại Gyeongju, Busan, Suncheon và Gwangju để trải nghiệm văn hóa đặc sắc của dân tộc Hàn Quốc.</div>
+          </div>
+          <div class="award-group">
+            <div class="bullet-item">MC - INFLUENCER</div>
+            <div class="item-subtext">2014 – Hiện tại</div>
+          </div>
+          <div class="award-group">
+            <div class="bullet-item">PHÓNG VIÊN DANH DỰ KOREA.NET</div>
+            <div class="item-subtext">2019 – Hiện tại</div>
+          </div>
+        </section>
+
+        <!-- SKILLS -->
+        <section>
+          <div class="section-title">KỸ NĂNG (SKILLS)</div>
+          <div class="skill-row">
+            <div class="skill-name">Giao tiếp (Communication)</div>
+            <div class="skill-dots">●●●●●</div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-name">Tiếp thị và Bán hàng (Marketing and Sale)</div>
+            <div class="skill-dots">●●●●●</div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-name">Mạng xã hội (Social media)</div>
+            <div class="skill-dots">●●●●●</div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-name">Khả năng lãnh đạo (Leadership)</div>
+            <div class="skill-dots">●●●●●</div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-name">Quản lý thời gian (Time management)</div>
+            <div class="skill-dots">●●●●●</div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-name">Làm việc nhóm (Team working)</div>
+            <div class="skill-dots">●●●●●</div>
+          </div>
+        </section>
+
+        <!-- LICENSE -->
+        <section>
+          <div class="section-title">CHỨNG CHỈ (LICENSE)</div>
+          <div class="license-line">Tiếng Anh | TOEIC 650 điểm</div>
+          <div class="license-line">Tiếng Hàn | TOPIK 4 / KIIP 5</div>
+        </section>
+      </aside>
+
+      <!-- CỘT PHẢI -->
+      <main class="right-col">
+        <!-- EXPERIENCE -->
+        <section>
+          <div class="section-title">KINH NGHIỆM LÀM VIỆC (EXPERIENCE)</div>
+
+          <!-- MỤC MỚI CẬP NHẬT: APOTHE / ES INTERNATIONAL -->
+          <div class="experience-item">
+            <div class="job-title-row">11.2025 – Hiện tại | ES INTERNATIONAL / APOTHE, Giám đốc Đối ngoại (Phát triển Thị trường Châu Á)</div>
+            <ul class="job-bullets">
+              <li>Phát triển thị trường Việt Nam và Đông Nam Á cho APOTHE, một thương hiệu dược mỹ phẩm K-Beauty Hàn Quốc.</li>
+              <li>Phát triển và quản lý mối quan hệ với các nhà phân phối, đối tác B2B và KOL/KOC.</li>
+              <li>Tìm kiếm, xác định các cơ hội kinh doanh và quan hệ đối tác mới tại thị trường nước ngoài.</li>
+              <li>Phụ trách các dự án tiếp thị, livestream, hợp tác KOL/KOC và tiếp thị nội dung.</li>
+              <li>Hỗ trợ chiến lược mở rộng và tăng trưởng cho thương hiệu K-Beauty tại Việt Nam.</li>
+            </ul>
+          </div>
+
+          <!-- I&U&I -->
+          <div class="experience-item">
+            <div class="job-title-row">08.2024 – 10.2025 | Công ty TNHH I&U&I, Nhân viên Phụ trách Kinh doanh B2B</div>
+            <ul class="job-bullets">
+              <li>Phát triển kinh doanh theo mô hình B2B và B2C</li>
+              <li>Lập kế hoạch và hiện thực hóa việc phát triển quan hệ đối tác mảng thời trang</li>
+              <li>Tiếp cận, đàm phán và thúc đẩy hợp tác với đối tác</li>
+              <li>Đề xuất các giải pháp nhằm cải thiện quan hệ hợp tác với đối tác</li>
+              <li>Thiết lập và duy trì mối quan hệ đối tác, cung cấp các giải pháp mang lại hiệu quả hợp tác</li>
+            </ul>
+          </div>
+
+          <!-- SENTBE -->
+          <div class="experience-item">
+            <div class="job-title-row">11.2023 – 07.2024 | SENTBE, COUNTRY MANAGER (Giám đốc Quốc gia)</div>
+          </div>
+
+          <!-- GMONEYTRANS -->
+          <div class="experience-item">
+            <div class="job-title-row">09.2020 – 08.2023 | GMONEYTRANS, COUNTRY MANAGER (Giám đốc Quốc gia)</div>
+            <ul class="job-bullets">
+              <li>Thiết lập và thực hiện chiến lược tiếp thị dựa trên khảo sát thị trường và phân tích khách hàng mục tiêu là người nước ngoài cư trú tại Hàn Quốc</li>
+              <li>Quản lý đội ngũ Việt Nam: Tuyển dụng, đào tạo, lãnh đạo,...</li>
+              <li>Thiết lập và duy trì mối quan hệ với các cơ quan chính phủ, đoàn thể và đối tác chiến lược</li>
+              <li>Quản lý các kênh truyền thông xã hội Facebook / Instagram / TikTok và các kênh khác của GMONEYTRANS</li>
+              <li>Hỗ trợ đội ngũ nội dung và truyền thông xây dựng các chương trình khuyến mãi cho khu vực được phân công</li>
+              <li>Giám sát hiệu quả của các hoạt động tiếp thị và nhanh chóng giải quyết sự cố phát sinh</li>
+              <li>Hợp tác với ban điều hành để hoạch định sản phẩm</li>
+            </ul>
+          </div>
+
+          <!-- AMBER ACADEMY -->
+          <div class="experience-item">
+            <div class="job-title-row">05.2018 – 03.2019 | AMBER ACADEMY, BUSINESS DEVELOPMENT (Phát triển Kinh doanh)</div>
+            <ul class="job-bullets">
+              <li>Phát triển kinh doanh theo mô hình B2B và B2C</li>
+              <li>Lập kế hoạch và hiện thực hóa phát triển đối tác trong các lĩnh vực F&B, thời trang, mỹ phẩm, giáo dục và giải trí</li>
+              <li>Tiếp cận, đàm phán và thúc đẩy hợp tác với đối tác</li>
+              <li>Đề xuất các giải pháp nhằm cải thiện quan hệ hợp tác với đối tác</li>
+              <li>Thiết lập và duy trì mối quan hệ đối tác, cung cấp các giải pháp mang lại hiệu quả hợp tác</li>
+            </ul>
+          </div>
+
+          <!-- GOLDEN PHOENIX -->
+          <div class="experience-item">
+            <div class="job-title-row">08.2016 – 04.2018 | GOLDEN PHOENIX, MARKETING (Tiếp thị)</div>
+            <ul class="job-bullets">
+              <li>Khảo sát thị trường mỹ phẩm, khách hàng và đối thủ cạnh tranh nhằm phân tích nhu cầu người tiêu dùng và xu hướng</li>
+              <li>Quản lý các kênh truyền thông như website, blog, fanpage</li>
+              <li>Sản xuất nội dung liên quan đến hoạt động tiếp thị như email, brochure, banner, video, podcast,...</li>
+              <li>Tối ưu hóa nội dung theo tiêu chuẩn SEO, SEM, SMO nhằm nâng cao nhận diện thương hiệu</li>
+              <li>Phối hợp với các phòng ban khác trong công ty để đảm bảo tính nhất quán và hiệu quả của chiến lược tiếp thị</li>
+              <li>Giám sát hiệu quả chiến dịch tiếp thị và liên tục cải tiến</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- PROJECT -->
+        <section>
+          <div class="section-title">DỰ ÁN (PROJECT)</div>
+          <div class="experience-item">
+            <div class="job-title-row">08.2023 – 10.2023 | TRADETREK, BUSINESS DEVELOPMENT (Phát triển Kinh doanh)</div>
+            <ul class="job-bullets">
+              <li>Giao tiếp với người mua hiện tại và tiềm năng ở nước ngoài để củng cố mối quan hệ lâu dài và nâng cao tỷ lệ giữ chân khách hàng</li>
+              <li>Tìm kiếm và đánh giá các cơ hội kinh doanh mới</li>
+              <li>Chuẩn bị và thực hiện các buổi thuyết trình (pitching) giới thiệu cho các nhà phân phối và bán lẻ tiềm năng</li>
+              <li>Đàm phán hợp đồng mới và chốt các giao dịch kinh doanh</li>
+              <li>Phân tích nhu cầu thị trường, tình hình nội bộ - bên ngoài và hợp tác với các phòng ban khác để kiểm soát các yếu tố có thể cản trở sự tăng trưởng kinh doanh</li>
+              <li>Giám sát CRM, báo cáo bán hàng và thị trường để đo lường hiệu quả các chiến dịch tiếp cận chủ động (Outbound: Email, SMS, Quảng cáo,...)</li>
+            </ul>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+</body>
+</html>
+
